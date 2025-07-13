@@ -2,6 +2,12 @@ provider "aws" {
   region = "eu-north-1"
 }
 
+variable "ssh_key_name" {
+  description = "Name of the EC2 key pair to enable SSH access"
+  type        = string
+  default     = "CI-CD"
+}
+
 resource "aws_vpc" "khushboo_vpc" {
   cidr_block = "10.0.0.0/16"
 
